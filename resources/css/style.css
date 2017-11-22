@@ -104,6 +104,7 @@ h2#ourcities:target, h2#signup:target {
 h3 {
     font-size: 110%;
     letter-spacing: 1px;
+    margin-bottom: 15px;
 }
 
 /* ----- PARAGRAPHS ------ */
@@ -127,26 +128,31 @@ h3 {
 }
 
 .icon-small {
-    
-    
-    /* horizontal centering: */
-    
-    
-    /* vertical centering: */
-    
+    display: inline-block;
+    font-size: 120%;
+    width: 1.25em;
+    text-align: center;
+    color: #e67e22;
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -.1666em;
 }
 
 /* ----- LINKS ------ */
-a:link, a:visited {
-    
+a:link, a:visited, input[type="submit"] {
+    color: #e67e22;
+    border-bottom: 1px solid #e67e22;
+    padding-bottom: 1px;
+    transition: all 350ms ease-in;
 }
 
-a:hover, a:focus {
-    
+a:hover, a:focus, input[type="submit"] {
+    color: inherit;
+    border-bottom: 1px solid transparent;
 }
 
 /* ----- BUTTONS -------- */
-.btn:link, .btn:visited {
+.btn:link, .btn:visited, input[type="submit"] {
     display: inline-block;
     padding: .5em 1em;
     font-weight: 300;
@@ -155,7 +161,7 @@ a:hover, a:focus {
     transition: background-color 300ms 50ms, color 300ms 150ms, border 300ms 50ms;
 }
 
-.btn-full:link, .btn-full:visited {
+.btn-full:link, .btn-full:visited, input[type="submit"] {
     background-color: #e67e22;
     color: #fff; 
     margin-right: 15px;
@@ -165,7 +171,7 @@ a:hover, a:focus {
     color: #e67e22;
 }
 
-.btn:hover, .btn:focus  {
+.btn:hover, .btn:focus, input[type="submit"]:hover, input[type="submit"]:focus  {
     background-color: #cf6217;
     border: 1px solid #cf6217;
 }
@@ -183,6 +189,7 @@ header {
     height: 100vh;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .hero-text-box {
@@ -262,7 +269,7 @@ header {
 /* FEATURES */
 /* ---------------------------------------- */
 .section-features .long-copy {
-    
+    margin-bottom: 30px;
 }
 
 /* ---------------------------------------- */
@@ -307,43 +314,54 @@ header {
 /* HOW IT WORKS */
 /* ---------------------------------------- */
 .section-steps {
-    
-}
-
-.steps-box {
-    
+    background-color: #f4f4f4;
 }
 
 .steps-box:first-child {
-    
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
 }
 
 .steps-box:last-child {
-    
+    padding-left: 3%;
+    margin-top: 70px;
 }
 
 .app-screen {
-    
+    width: 40%;
 }
 
 .works-step {
-       
+    margin-bottom: 50px;   
 }
 
 .works-step:last-of-type {
-    
+    margin-bottom: 80px;
 }
 
 .works-step div { /* change the #s into a circle */
-    
+    color: #e67e22;
+    border: .0666em solid; /* was 2px */
+    display: inline-block;
+    border-radius: 50%;
+    height: 1.8333em; /* was 55px */
+    width: 1.8333em; /* was 55px */
+    font-size: 150%; /* 30px */
+    float: left;
+    text-align: center;
+    padding: .1666em; /* was 5px */
+    margin-right: .8333em; /* was 25px */
 }
 
 .btn-app:link, .btn-app:visited {
-    
+    border-bottom: none;
 }
 
 .btn-app img {
-    
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
 }
 
 /* ---------------------------------------- */
@@ -351,11 +369,13 @@ header {
 /* ---------------------------------------- */
 
 .box img {
-    
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
 }
 
-.city-feature {
-    
+.city-feature + .city-feature {
+    margin-top: 5px;
 }
 
 /* ---------------------------------------- */
@@ -363,23 +383,44 @@ header {
 /* ---------------------------------------- */
  
 .section-testimonials {
-    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers.jpg);
+    color: #fff;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 blockquote {
-    
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+    border-top: 10px solid #cf6217;
+    border-bottom: 10px solid #cf6217;
+    border-radius: 50px;
+    padding: 30px 5%;
 }
 
 blockquote::before {
-    
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 40%;
 }
 
 cite {
-    
+    font-size: 90%;
+    display: block;
+    margin-top: 25px;
+    text-align: center;
 }
 
 cite img {
-    
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 /* ---------------------------------------- */
@@ -387,66 +428,83 @@ cite img {
 /* ---------------------------------------- */
 
 .section-plans {
-    
+    background-color: #f4f4f4;    
 }
 
 .plan-box {
-    
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #eee;
 }
 
 .plan-box div {
-     
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 .plan-box div:last-child {
-    
+    text-align: center;
+    border-bottom: 0;
 }
 
 .plan-box div:first-child {
-    
+    background-color: #fcfcfc;
+    border-radius: 5px 5px 0 0;
 }
 
 .plan-price {
-    
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #e67e22;
 }
 
 .plan-price span {
-    
+    font-size: 30%;
+    font-weight: 300;
+    margin-left: -15px;
 }
 
 .plan-price-meal {
-    
+     font-size: 80%;   
 }
 
 .plan-box ul li {
-    
+    padding: 5px 0;    
 }
 
 /* ---------------------------------------- */
 /* FORM */
 /* ---------------------------------------- */
 
+.contact-form .col:not(:first-child) { margin-left: 0;} /* now all the rows that wrap each label/input are not needed */
+
 .contact-form {
-    
+    width: 60%;
+    margin: 0 auto;
 }
 
 input[type="text"], input[type="email"], select, textarea {
-    
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
 }
 
 textarea {
-    
+    height: 100px;
+    resize: none    
 }
 
 input[type="checkbox"] {
-    
+    margin: 10px 5px 10px 0; 
 }
 
 *:focus {
-    
+    outline: none;    
 }
-/*
-.contact-form .col:not(:first-child) { margin-left: 0;} /* now all the rows that wrap each label/input are not needed */
 
 .map-box {
     
@@ -477,61 +535,69 @@ input[type="checkbox"] {
 /* ---------------------------------------- */
 
 footer {
-    
+    background-color: #333;
+    padding: 50px;
 }
 
 footer p {
-    
+    color: #888;
+    text-align: center;
+    font-size: 80%;
+    margin-top: 20px;
 }
 
 .footer-nav {
-    
+    float: left;
 }
 
 .social-links {
-    
+    float: right;
 }
 
 .footer-nav li, .social-links li {
-    
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .footer-nav li:last-child, .social-links li:last-child {
-    
+    margin-right: 0;
 }
 
 .footer-nav li a:link, .footer-nav li a:visited,
 .social-links li a:link, .social-links li a:visited {
-    
+    border: 0;
+    color: #888;
+    transition: color 300ms 50ms;
 }
 
 .footer-nav li a:hover, .footer-nav li a:focus {
-    
+    color: #ddd;
 }
 
 .social-links li a:link, .social-links li a:visited {
-    
+    font-size: 160%;
 }
 
 .social-links i {
-    
+    transition: color 300ms ease-in;
 }
 
 .ion-social-facebook:hover {
-      
+    color: #3b5998; 
 }
 
 .ion-social-twitter:hover {
-    
+    color: #00aced;
 }
 
 .ion-social-codepen:hover {
-    
+    color: #fff;
 }
 
 .ion-social-dribbble:hover {
-    
+    color: orange;
 }
+
 
 
 /* ---------------------------------------- */
