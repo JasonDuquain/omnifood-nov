@@ -1,14 +1,3 @@
-/* COLOR= #e67e22; 
-
-GRID.CSS=
-
-.col {
-    display: block;
-    float:left;
-    margin: 1% 0 1% 1.6%;
-}
-
-*/
 
 /* ---------------------------------------- */
 /* BASIC SETUP */
@@ -22,13 +11,14 @@ GRID.CSS=
     list-style-type: none;           
 }
 
-html {
+html, body {
     background-color: #fff;
     color: #555;
     font-family: "Lato", Arial, sans-serif;
     font-size: 20px;
     font-weight: 300;
-    text-rendering: optimizeLegibility;    
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 .clearfix::after {
@@ -97,8 +87,8 @@ h2::after {
     }
 }
 
-h2#ourcities:target, h2#signup:target {
-    
+#ourcities:target h2, #signup:target h2 {
+    animation: highlight 1400ms;
 }
 
 h3 {
@@ -146,7 +136,7 @@ a:link, a:visited, input[type="submit"] {
     transition: all 350ms ease-in;
 }
 
-a:hover, a:focus, input[type="submit"] {
+a:hover, input[type="submit"]:hover {
     color: inherit;
     border-bottom: 1px solid transparent;
 }
@@ -171,7 +161,7 @@ a:hover, a:focus, input[type="submit"] {
     color: #e67e22;
 }
 
-.btn:hover, .btn:focus, input[type="submit"]:hover, input[type="submit"]:focus  {
+.btn:hover, input[type="submit"]:hover  {
     background-color: #cf6217;
     border: 1px solid #cf6217;
 }
@@ -208,7 +198,7 @@ header {
 }
 
 .logo-black {
-    
+    display: none;
 }
 
 /* MAIN nav */
@@ -222,6 +212,7 @@ header {
     margin-left: 40px;
 }
 
+
 .main-nav li a:link, .main-nav li a:visited {
     color: #fff;
     text-transform: uppercase;
@@ -231,38 +222,54 @@ header {
     transition: border-bottom 300ms 50ms;
 }
 
-.main-nav li a:hover, .main-nav li a:focus {
+.main-nav li a:hover {
     border-bottom: 2px solid #e67e22;       
 }
 
+
 /* MOBILE nav */
 .mobile-nav-icon {
-    
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
 } 
 
 .mobile-nav-icon i {
-    
+    font-size: 200%;
+    color: #fff;
 }
 
 /* Sticky Nav */
 .sticky {
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,.98);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 9999;
 }
 
 .sticky .main-nav {
-    
+    margin-top: 18px;
 }
 
 .sticky .main-nav li a:link, .sticky .main-nav li a:visited {
-    
+    color: #555;
+    padding: 18px 0;
 }
 
 .sticky .logo {
-   
+   display: none;
 }
 
 .sticky .logo-black {
-    
+    display: block;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
 }
 
 /* ---------------------------------------- */
@@ -618,11 +625,11 @@ footer p {
 @media only screen and (max-width: 1200px) {
 
 .hero-text-box { 
-
-        
-    }
+    padding: 0 2%;
+    width: 100%;
+}
 	
-.row {  }
+.row { padding: 0 2%; }
     
     
 }
@@ -630,118 +637,114 @@ footer p {
 /* SMALL TABLET TO BIG TABLET: 768 - 1023px */
 @media only screen and (max-width: 1023px) {
 
-body {   }
+body {  font-size: 18px; }
     
-section {   }
+section { padding: 60px 0;  }
     
 .long-copy {
-        
+    width: 80%;
+    margin-right: 10%;
+}
+
+.steps-box:last-child, .steps-box:first-child {
+        margin-top: 10px;
+    }
+    
+    .works-step {
+        margin-bottom: 40px;
+    }
+    
+    .works-step:last-of-type { margin-bottom: 60px; }
+    
+    .app-screen { width: 50%; }
+    
+    .icon-small {
+        width: 17px;
     }
 
-.steps-box:last-child, .steps-box:first-child {  }
-.works-step {  }
-.works-step:last-of-type {  }
+    .city-feature { font-size: 90%; }
     
-.app-screen {  }
+    .plan-box {
+        width: 100%;
+        margin-left: 0;
+    }
     
-.icon-small {
-		
-		}
-		
-.city-feature {  }
+    .plan-price {
+        font-size: 250%;
+    }
     
-.plan-box {
-		
-		}
-		
-.plan-price {  }
+    .contact-form { width: 90%; }
     
-.contact-form {  }	
-
-
 }
 
 /* SMALL PHONES LANDSCAPE and TABLETS: 480 - 767px */
 @media only screen and (max-width: 767px) {
 	
-body {  }
+body { font-size: 16px; }
 
-section {  }
+section { padding: 30px 0; }
     
-.row, .hero-text-box {}
+.row, .hero-text-box {padding: 0 4%;}
     
-.col {}
+.col { width: 100%; margin: 0 0 4% 0; }
     
-.main-nav {}
+.main-nav { display: none;}
     
 .mobile-nav-icon {
-        
+    display: inline-block;
     }
     
 .main-nav {
-        
+    float: left;
+    margin-top: 30px;
+    margin-left: 25px;
     }
     
 .main-nav li {
-        
+     display: block;
     }
     
 .main-nav li a:link, .main-nav li a:visited {
-        
+     display: block;
+        border: 0;
+        font-size: 100%;
+        padding: 10px 0;   
     }
     
 .sticky .main-nav {
-        
+      margin-top: 10px;  
     }
 
 .sticky .main-nav li a:link, .sticky .main-nav li a:visited {
-        
+     padding: 10px 0;   
     }
     
 .sticky .mobile-nav-icon {
-        
+      margin-top: 10px;  
     }
     
 .sticky .mobile-nav-icon i {
-        
+     color: #555;   
     }
     
-.long-copy {}
+ .long-copy { width: 100%; margin-left: 0;}
     
-h1 {}
-h2 {}
+    h1 {font-size: 180%;}
     
-.works-step {}
-.works-step:last-of-type {}
+    h2 {font-size: 150%;}
     
-.works-step div {
-        
+.works-step {margin-bottom: 20px;}
+    
+    .works-step div {
+        font-size: 120%;
     }
     
-.multicol {}
+    .app-screen { width: 40%;}
     
-.steps-box:first-child {}
+    .steps-box:first-child { text-align: center;}
     
-.col:first-child {}
-    
-.app-screen {}
-    
-blockquote {}
-    
-footer {}
-    
-.social-links, .footer-nav {}
-    
-.map-box {
-        
-    }
-
-.map {
-       
-    }
-
-.form-box {
-        
+    .section-form .col:last-child {
+        text-align: center;
     }
 
     
@@ -750,19 +753,61 @@ footer {}
 /* SMALL PHONES PORTRAIT: 0 - 480px */
 @media only screen and (max-width: 480px) {
     
-section {  }
+section { padding: 25px 0; }
     
-.contact-form {  }
+.contact-form { width: 100%; }
     
-.multicol {  }
- 
- 
 }
 
+/******  STYLES AFTER JS    ****/
 
+a.clicked {
+    color: green !important;
+}  
+ 
+.app-screen {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1000ms;
+}
 
+.app-screen.animate {
+    opacity: 1;
+    transform: translateY(0);
+}      
+ 
+.section-cities .box {
+    opacity: 0;
+    transform: scale(2);
+    transition: 1200ms ease-out;
+}
 
+.section-cities .box:nth-of-type(2) {
+    opacity: 0;
+    transform: scale(2);
+    transition: 1200ms ease-out 200ms;
+}
 
+.section-cities .box:nth-of-type(3) {
+    opacity: 0;
+    transform: scale(2);
+    transition: 1200ms ease-out 400ms;
+}
+
+.section-cities .box:nth-of-type(4) {
+    opacity: 0;
+    transform: scale(2);
+    transition: 1200ms ease-out 600ms;
+}
+
+.section-cities .box.animate {
+    opacity: 1;
+    transform: scale(1);
+}   
+
+.main-nav.navVisible {
+    display: block;
+}
 
 
 
